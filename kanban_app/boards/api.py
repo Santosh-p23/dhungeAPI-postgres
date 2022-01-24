@@ -1,6 +1,5 @@
 from boards.models import Board, Column, Task
 from rest_framework import viewsets, permissions
-from .custompermissions import isOwner
 from .serializers import BoardSerializer, ColumnSerializer, TaskSerializer
 
 

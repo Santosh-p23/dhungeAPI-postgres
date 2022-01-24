@@ -35,20 +35,6 @@ def logout_view(request):
     return JsonResponse({'detail': 'Successfully logged out.'})
 
 
-@ensure_csrf_cookie
-def session_view(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({'isAuthenticated': False})
-
-    return JsonResponse({'isAuthenticated': True})
-
-
-def whoami_view(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({'isAuthenticated': False})
-
-    return JsonResponse({'username': request.user.username})
-
 @require_POST
 @csrf_exempt
 def register_view(request):
